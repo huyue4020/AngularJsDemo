@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>UI-route</title>
+	</head>
+	<style>
+		table{
+			width: 800px;
+		}
+		.leftmenu{
+			width: 200px;
+			height: 500px;
+		}
+		.leftmenu a{
+			display: block;
+		}
+		.mainContent{
+			background: #ccc;
+		}
+	</style>
+	<body>
+		<table border="1">
+			<tr>
+				<td colspan="2">website Header</td>
+			</tr>
+			<tr>
+				<!-- 菜单栏 -->
+				<td class="leftmenu">
+					<a ui-sref="home">home</a>
+					<a ui-sref="course">course</a>
+					<a ui-sref="employeeParent.employee">employeeParent</a>
+				</td>
+				<!-- 工作区域 -->
+				<td class="mainContent">
+					<!-- 路由显示区域 -->
+					<!-- <ng-view></ng-view> -->
+					<ui-view></ui-view>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">Footer</td>
+			</tr>
+		</table>
+
+		<script type="text/javascript" src="./libs/angular.js"></script>
+		<script type="text/javascript" src="./libs/angular-ui-router.js"></script>
+		<script type="text/javascript" src="./src/scripts/demo3.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,28 @@
+<table border="1" class="info">
+	<tr>
+		<td ng-click="sortData('firstName')">FirstName
+			<span ng-class="getSortClass('firstName')"></span>
+		</td>
+		<td ng-click="sortData('lastName')">LastName
+			<span ng-class="getSortClass('lastName')"></span>
+		</td>
+		<td ng-click="sortData('gender')">Gender
+			<span ng-class="getSortClass('gender')"></span>
+		</td>
+		<td ng-click="sortData('salary')">Salary
+			<span ng-class="getSortClass('salary')"></span>
+		</td>
+		<td>Salary</td>
+		<td ng-click="sortData('birthday')">Birthday
+			<span ng-class="getSortClass('birthday')"></span>
+		</td>
+	</tr>
+	<tr ng-repeat="employee in employees | orderBy:sortColumn:reverseSort">
+		<td>{{employee.firstName | uppercase}}</td>
+		<td>{{employee.lastName | lowercase}}</td>
+		<td>{{employee.gender}}</td>
+		<td>{{employee.salary |number:2}}</td>
+		<td>{{employee.salary |currency:'￥':1}}</td>
+		<td>{{employee.birthday | date:'yyyy-MM-dd' }}</td>
+	</tr>
+</table>

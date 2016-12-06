@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Hello World</title>
+        <style>
+        html, body {
+        	height: 100%;
+        	padding: 0px;
+        	margin: 0px;
+        }
+        #area {
+        	height: 70%;
+        	box-shadow: 0px 2px 8px #333;
+        	position: relative;
+        }
+        #plan {
+        	width: 60px;
+        	position: absolute;
+        	left: 0;
+        	bottom: 0;
+        }
+        #plan img {
+        	width: 100%;
+        }
+        button {
+        	width: 80%;
+        	margin-left: 10%;
+        	margin-top: 15px;
+        	height: 45px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="area">
+        	<div id="plan"><img src="img/plan.jpg"></div>
+        </div>
+        <button id="start">开始监视</button>
+        <button id="stop">停止监视</button>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

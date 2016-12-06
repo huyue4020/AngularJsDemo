@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>demo10(排序)</title>
+</head>
+<body ng-controller="myController">
+
+	请选择排序方式:
+	<select ng-model="orderProp">
+		<option value="name">name</option>
+		<option value="age">age</option>
+		<option value="grade">grade</option>
+		<option value="class">class</option>
+	</select>
+	<p>{{title}}</p>
+	<table border="1">
+		 <tr>
+		 	<th><button ng-click="order('name')">排序</button></th>
+		 	<th><button ng-click="order('age')">排序</button></th>
+		 	<th><button ng-click="order('grade')">排序</button></th>
+		 	<th><button ng-click="order('class')">排序</button></th>
+		 </tr>
+		 <tr>
+		 	<th>姓名</th>
+		 	<th>年龄(岁)</th>
+			<th>成绩(分)</th>
+			<th>班级(班)</th>
+		 </tr>
+		 <tr ng-repeat="item in items | orderBy:orderProp:reverse">
+		 	<td>{{item.name}}</td>
+		 	<td>{{item.age}}</td>
+		 	<td>{{item.grade}}</td>
+		 	<td>{{item.class}}</td>
+		 </tr>
+	</table>
+
+	<script src="./libs/angular.js"></script>
+	<script src="./src/scripts/demo10.js"></script>
+</body>
+</html>

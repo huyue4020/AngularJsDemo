@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="myApp"> <!-- 给angular一个入口点 -->
+<head>
+	<meta charset="UTF-8">
+	<title>angularJS-demo6</title>
+	<style>
+		b{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			background-color: gray;
+		}
+		b.sub{
+			background-color: green;
+		}
+	</style>
+</head>
+<body ng-controller="myController">
+	<input type="text" ng-model="limit">
+
+	<ul>
+		<li ng-repeat="item in items | limitTo:limit | orderBy:'-updated'">
+			<span>名字:{{item.title}}</span>
+			<span>是否发布:<b ng-class="{'sub':item.subscribe}">√</b></span>
+			<span>更新时间:{{item.updated | date:'yyyy年MM月dd月,HH:mm'}}</span>
+		</li>
+	</ul>
+	
+	<!-- 浏览器对￥$符号显示不一样，用iconfont解决 -->
+	<div>{{price | currency:'￥'}}</div>  
+	<div>{{price | currency:'$'}}</div>
+
+	<script src="./libs/angular.js"></script>
+	<script src="./src/scripts/demo6.js"></script>
+</body>
+</html>

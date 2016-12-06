@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="myApp"> <!-- 给angular一个入口点 -->
+<head>
+	<meta charset="UTF-8">
+	<title>angularJS-demo5</title>
+</head>
+<body ng-controller="myController">
+	<input type="text" ng-model="item" ng-keydown="add($event)"/>
+	<ul>
+		<li ng-repeat="item in items track by $index">
+			{{$index}},{{item}}
+			<button ng-click="remove($index)">X</button>
+		</li>
+	</ul>
+	
+
+	<script src="./libs/angular.js"></script>
+	<script src="./src/scripts/demo5.js"></script>
+</body>
+</html>

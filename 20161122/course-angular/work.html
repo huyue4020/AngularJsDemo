@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>work-route</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 100%;
+			height: 100%;
+		}
+		header{
+			width: 100%;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			background-color: #000;
+			color: #fff;
+		}
+		footer{
+			width: 100%;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			background-color: #000;
+			color: #fff;
+		}
+		section{
+			width: 100%;
+			height: 500px;
+		}
+		section .leftMenu{
+			width: 30%;
+			height: 100%;
+			float: left;
+		}
+		section .leftMenu ul li{
+			display: block;
+			text-align: center;
+			margin-top: 20px;
+		}
+		section .rightMain{
+			width: 70%;
+			height: 100%;
+			background-color: #ccc;
+			float: left;
+		}
+		.arrow-down:after {
+		  content: '\25b2';
+		}
+		.arrow-up:after {
+		  content: '\25bc';
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>Header</header>
+		<section>
+			<div class="leftMenu">
+				<ul>
+					<li><a href="#/home">Home</a></li>
+					<li><a href="#/page1">Page1</a></li>
+					<li><a href="#/page2">Page2</a></il>
+				</ul>
+			</div>
+			<div class="rightMain">
+				<ng-view></ng-view>
+			</div>
+		</section>
+		<footer>Footer</footer>
+	</div>
+
+	<script type="text/javascript" src="./libs/angular.js"></script>
+	<script type="text/javascript" src="./libs/angular-route.min.js"></script>
+	<script type="text/javascript" src="./src/scripts/work.js"></script>
+</body>
+</html>

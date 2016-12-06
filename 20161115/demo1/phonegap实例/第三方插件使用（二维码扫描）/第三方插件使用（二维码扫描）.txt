@@ -1,0 +1,20 @@
+前提条件：
+1.JDK 64位
+2.android studio
+3.nodejs (npm)
+4.安装cordova (cmd中运行 npm install -g cordova)
+
+***插件安装***
+插件查询网址：
+http://cordova.apache.org/plugins/
+用命令来安装plugin
+phonegap plugin add phonegap-plugin-barcodescanner
+
+***打包***
+1. cd 到我们的工程目录
+2. cordova platform add android
+3. cordova build android
+
+签名：
+使用证书对程序进行认证
+作用，方便开发者认领程序

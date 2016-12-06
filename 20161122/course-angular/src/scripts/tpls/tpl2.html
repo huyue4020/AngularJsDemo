@@ -1,0 +1,8 @@
+<div ng-repeat="employee in employees | orderBy:sortColumn:reverseSort">
+	<span>{{employee.firstName | uppercase}}</span>
+	<span>{{employee.lastName | lowercase}}</span>
+	<span>{{employee.gender}}</span>
+	<span>{{employee.salary |number:2}}</span>
+	<span>{{employee.salary |currency:'￥':1}}</span>
+	<span>{{employee.birthday | date:'yyyy-MM-dd' }}</span>
+</div>

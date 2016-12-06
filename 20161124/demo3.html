@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Demo1-$emit-$broadcast</title>
+	</head>
+
+	<body>
+		<!-- $emit可以触发$on,隔着控制台也可以触发，负责往上传(父元素),
+		$broadcast负责往下传(子元素)
+		不能触发兄弟元素 -->
+		<div ng-controller="parentCtrl">
+			<div ng-controller="child1Ctrl">
+				<button ng-click="action()">click me</button>
+
+				<div ng-controller="grandson">
+					<div ng-controller="grandson2">
+						<div ng-controller="grandson3"></div>
+						<div ng-controller="grandson4"></div>
+						<div ng-controller="grandson5"></div>
+					</div>
+				</div>
+			</div>
+			<div ng-controller="child2Ctrl">
+				
+			</div>
+
+		</div>
+		
+
+
+		<script type="text/javascript" src="./libs/angular.js"></script>
+		<script type="text/javascript" src="./src/scripts/demo3.js"></script>
+	</body>
+
+</html>

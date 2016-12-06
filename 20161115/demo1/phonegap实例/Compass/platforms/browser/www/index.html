@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Hello World</title>
+		<link rel="stylesheet" href="common/css/bootstrap.css">
+		<link rel="stylesheet" href="common/css/cmn_style.css">
+        <style>
+		 .head h1 {
+			margin-bottom: 20px;
+		}
+		.navbar-header {
+				float: none;
+		}
+		.page-header {
+			margin: 10px 0 20px;
+		}
+		.compass {
+			text-align: center;
+			padding: 10px 0 0;
+			position: relative;
+		}
+			.compassTure {
+				width: 200px;
+				height: 200px;
+				display: inline-block;
+				position: absolute;
+				border: 2px solid #333333;
+				border-radius: 100%;
+				left: 50%;
+				margin-left: -100px;
+			}
+				.compassTure span {
+					font-size: 1.6rem;
+					position: absolute;
+					top: -25px;
+					left: 50%;
+					margin-left: -6px;
+				}
+
+		img.compassMagnetic{
+			width: 200px;
+			height: 200px;
+		}
+		.magneticNumStyle {
+			width: 120px;
+			text-align: center;
+			border: none;
+			background: transparent;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -7px 0 0 -60px;
+			font-size: 1.6rem;
+			font-weight: bold;
+			letter-spacing: 0.05em;
+			color: #999999;
+		}
+        </style>
+    </head>
+    <body>
+		<header class="head">
+			<h1 class="navbar-header"><small>Compass API</small></h1>
+		</header>
+
+		<div class="main">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<section>
+							<div class="compass">
+								<div id="compassTureNorth" class="compassTure">
+									<span>N</span>
+								</div>
+								<div>
+									<img id="compassPointer" class="compassMagnetic" src="img/compass.png" alt="コンパスの画像で回転の角度にかかわらず南北を指します。">
+								</div>
+								<input type="text" id="magneticNum" class="magneticNumStyle" value="000.000000">
+							</div>
+							<h2 class="page-header"><small>指南针(Compass)</small></h2>
+							<div class="form-group">
+								<textarea id="dumpAreaCompass" class="form-control" rows="4" readonly>执行结果显示在这里。</textarea>
+							</div>
+							<ul class="list-unstyled list-marginBtm">
+								<li><a class="btn btn-primary btn-block" id="getHeadingBtn">现在角度取得</a></li>
+								<li><a class="btn btn-primary btn-block" id="watchHeadingBtn">指南针启动</a></li>
+								<li><a class="btn btn-default btn-block" id="clearWatchBtn">指南针停止</a></li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

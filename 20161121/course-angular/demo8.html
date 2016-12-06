@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax--deferred</title>
+</head>
+<body>
+	<script src="./libs/jquery.js"></script>
+	<script>
+		// $.ajax({
+		// 	url:"./mock/app.json"
+		// })
+		// .done(function(){
+		// 	console.log("1");
+		// })
+		// .fail(function(){
+		// 	console.log("0");
+		// })
+		// .done(function(){
+		// 	console.log('2');
+		// })
+		
+		//两个ajax是同步进行的
+		$.when($.ajax('./mock/app.json'),$.ajax('./mock/list.json'))
+		.done(function(){
+			console.log('ok');
+		})
+		.fali(function(){
+
+		})
+	</script>
+</body>
+</html>

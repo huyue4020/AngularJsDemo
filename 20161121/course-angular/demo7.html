@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="myApp"> <!-- 给angular一个入口点 -->
+<head>
+	<meta charset="UTF-8">
+	<title>angularJS-demo7</title>
+</head>
+<body ng-controller="myController">
+
+	searchName:<input type="text" ng-model="searchText.name">
+	searchPhone:<input type="text" ng-model="searchText.phone">
+	<table border="1">
+		<tr>
+			<th>name</th>
+			<th>phone</th>
+		</tr>
+		<tr ng-repeat="f in items | filter:searchText">
+			<td>{{f.name}}</td>
+			<td>{{f.phone}}</td>
+		</tr>
+	</table>
+	<!-- ng-init临时初始化、储存数据 -->
+	<div ng-init="name='zhangsan'">
+		<b>{{name}}</b>
+	</div>
+	
+	<script src="./libs/angular.js"></script>
+	<script src="./src/scripts/demo7.js"></script>
+</body>
+</html>

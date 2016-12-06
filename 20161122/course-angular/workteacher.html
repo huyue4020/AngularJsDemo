@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>workTeacher</title>
+	<style>
+		.info {
+		  border-collapse: collapse;
+		}
+
+		.info th {
+		  border-bottom: 1px solid;
+		}
+		.info td, .info th {
+		  border-left: 1px solid;
+		  padding: 5px 10px;
+		}
+		.info td:first-child, .info th:first-child {
+		  border-left: none;
+		}
+
+		.arrow-down:after {
+		  content: '\25b2';
+		}
+		.arrow-up:after {
+		  content: '\25bc';
+		}
+		/*.arrow-up {
+			width: 0;
+			height: 0;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 10px solid black;
+			display: inline-block;
+		}
+		
+		.arrow-down {
+			width: 0;
+			height: 0;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top: 10px solid black;
+			display: inline-block;
+		}*/
+	</style>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		<table border="1" class="info">
+			<tr>
+				<td ng-click="sortData('firstName')">FirstName
+					<span ng-class="getSortClass('firstName')"></span>
+				</td>
+				<td ng-click="sortData('lastName')">LastName
+					<span ng-class="getSortClass('lastName')"></span>
+				</td>
+				<td ng-click="sortData('gender')">Gender
+					<span ng-class="getSortClass('gender')"></span>
+				</td>
+				<td ng-click="sortData('salary')">Salary
+					<span ng-class="getSortClass('salary')"></span>
+				</td>
+				<td>Salary</td>
+				<td ng-click="sortData('birthday')">Birthday
+					<span ng-class="getSortClass('birthday')"></div>
+				</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr ng-repeat="item in items | orderBy:sortColum:reverseSort">
+				<td>{{item.firstName | uppercase}}</td>
+				<td>{{item.lastName | lowercase}}</td>
+				<td>{{item.gender | gender}}</td>
+				<td>{{item.salary | number:2}}</td>
+				<td>{{item.salary | currency:'￥':1}}</td>
+				<td>{{item.birthday | date:'yyyy-MM-dd'}}</td>
+			</tr>
+		</table>
+	</div>
+	<script src="./libs/angular.js"></script>
+	<script src="./src/scripts/workteacher.js"></script>
+</body>
+</html>

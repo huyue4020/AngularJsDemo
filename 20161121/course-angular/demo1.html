@@ -1,0 +1,15 @@
+<!doctype html>
+<html ng-app="myApp"> <!-- 给angular一个入口点 -->
+<head>
+	<meta charset="UTF-8">
+	<title>angularJS-demo1</title>
+</head>
+<body ng-controller="myController">
+	<!-- V View -->
+	<div>{{users[0].name}},优缺点</div>
+	<div ng-bind="users[1].name">优缺点</div>
+
+	<script src="./libs/angular.js"></script>
+	<script src="./src/scripts/demo1.js"></script>
+</body>
+</html>

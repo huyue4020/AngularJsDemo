@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.arrow-up {
+				width: 0;
+				height: 0;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-bottom: 10px solid black;
+				display: inline-block;
+			}
+			
+			.arrow-down {
+				width: 0;
+				height: 0;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-top: 10px solid black;
+				display: inline-block;
+			}
+		</style>
+	</head>
+
+	<body ng-app="myModule">
+		<div ng-controller="myController">
+			<table>
+				<tr>
+					<td>Firstname</td>
+					<td>Lastname</td>
+					<td>Gender</td>
+				</tr>
+				<tr ng-repeat="employee in employees">
+					<td>{{employee.firstName}}</td>
+					<td>{{employee.lastName}}</td>
+					<td>{{employee.gender}}</td>
+				</tr>
+			</table>
+		</div>
+
+		<script type="text/javascript" src="./libs/angular.js"></script>
+		<script type="text/javascript" src="./src/scripts/demo2.js"></script>
+	</body>
+
+</html>

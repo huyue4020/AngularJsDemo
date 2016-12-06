@@ -1,0 +1,13 @@
+<h1>employees</h1>
+<div ng-repeat="employee in employeeCtrl.employees">
+	<!-- <a href="#/employee/{{employee.id}}&{{employee.firstName}}">{{employee.firstName}}</a>{{employee.gender}} -->
+	<a ui-sref="employeeParent.employeeDetail({id:employee.id,firstName:employee.firstName})">{{employee.firstName}}</a>{{employee.gender}}
+</div>
+
+<div>
+	<button ng-click="employeeCtrl.reload()">重新加载</button>
+</div>
+<br/>
+<input type="text" ng-model="employeeCtrl.keywords">
+	<button ng-click="employeeCtrl.search()">搜索</button>
+</input>

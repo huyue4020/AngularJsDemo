@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.arrow-up {
+				width: 0;
+				height: 0;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-bottom: 10px solid black;
+				display: inline-block;
+			}
+			
+			.arrow-down {
+				width: 0;
+				height: 0;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-top: 10px solid black;
+				display: inline-block;
+			}
+		</style>
+	</head>
+
+	<body ng-app="myModule">
+		<div ng-controller="myController">
+			<table border="1">
+				<tr>
+					<td>原字符串：</td>
+					<td><input type="text" ng-model="input"></td>
+				</tr>
+				<tr>
+					<td>转换后字符串：</td>
+					<td><input type="text" ng-model="output"></td>
+				</tr>
+				<tr>
+					<td><button ng-click="transFormUpper(input)">转换大写</button></td>
+					<td><button ng-click="transFormLower(input)">转换小写</button></td>
+				</tr>
+			</table>
+		</div>
+
+		<script type="text/javascript" src="./libs/angular.js"></script>
+		<script type="text/javascript" src="./src/scripts/demo3.js"></script>
+	</body>
+
+</html>

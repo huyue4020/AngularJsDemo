@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax--deferred</title>
+</head>
+<body>
+	<script src="./libs/jquery.js"></script>
+	<script>
+
+		var $dfd = $.Deferred(); 
+
+		var wait = function(){
+			var task = function(){
+				console.log('done');
+				$dfd.resolve('abc'); //执行状态，当deferred成功时候返回deferred对象
+				// $dfd.reject();
+			};
+
+			setTimeout(task,2000);
+
+			return $dfd.promise();
+		};
+		// wait();
+		var d = wait();
+		$.when(d)
+		.done(function(res){
+			console.log(res);
+		})
+		.fail(function(){
+			console.log('fail');
+		})
+		d.resolve('bbb');
+	</script>
+</body>
+</html>
